@@ -7,5 +7,8 @@ package com.max.jdk8;
  * @date Created in 2017-11-29 15:22
  */
 public class Lamda {
+    //三目式
+    //红黑树
+    //
 
 }
