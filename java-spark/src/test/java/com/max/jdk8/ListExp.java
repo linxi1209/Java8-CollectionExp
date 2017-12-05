@@ -19,23 +19,21 @@ public class ListExp {
 
     @Test
     public void listTest() {
-        ArrayList<Student> list = new ArrayList<Student>(); //List 接口不行（因为List没有重写clone方法。接口只有实现）。只能是ArrayList实现
-        Student stJack = new Student("Jack", 13);
-        Student stTom = new Student("Tom", 15);
-        list.add(stJack);
-        list.add(stTom);
+        ArrayList<Integer> list = new ArrayList<Integer>(); //List 接口不行（因为List没有重写clone方法。接口只有实现）。只能是ArrayList实现
+        list.add(1);
+        list.add(2);
 
         //克隆
-        ArrayList<Student> listCopy = (ArrayList<Student>) list.clone(); //开辟了一个新的堆空间。listCopy 和list完全独立的两个对象
+        ArrayList<Integer> listCopy = (ArrayList<Integer>) list.clone(); //开辟了一个新的堆空间。listCopy 和list完全独立的两个对象
         //移除且不修改
 //        listCopy.remove(1);  //list 中的1并未被删除
 //        System.out.println(list);
 //        System.out.println(listCopy);
         System.out.println(list == listCopy);
         System.out.println(list.equals(listCopy));
-        //浅复制：clone后的对象修改，并不影响克隆前，
+        //浅复制：clone后的对象修改，并不影响克隆前，（新增一个引用地址，指向已有内存空间）
         //原因所有的对其他对象的引用仍然指向原来的对象。换言之，浅复制仅仅复制所考虑的对象，而不复制它所引用的对象。
-        //深复制：clone后怎么改，对应的，clone前做出相应改变
+        //深复制：clone后怎么改，对应的，clone前做出相应改变（新增一个引用地址&&新内存空间）
         //那些引用其他对象的变量将指向被复制过的新对象，而不再是原有的那些被引用的对象。换言之，深复制把要复制的对象所引用的对象都复制了一遍。
     }
 
